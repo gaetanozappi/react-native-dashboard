@@ -17,8 +17,8 @@ const RippleColor = (...args) =>
   Platform.Version >= 21 ? TouchableNativeFeedback.Ripple(...args) : null;
 
 export default class Dashboard extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       width: width,
     };
@@ -30,9 +30,11 @@ export default class Dashboard extends Component {
   }
 
   render() {
-    var dim = this.state.width / this.props.column - 20;
+    console.log(!this.props.background);
+    var column = !this.props.column ? 2 : this.props.column;
+    var dim = this.state.width / column - 20;
     return (
-      <View onLayout={this.onLayout.bind(this)} style={{flex:1}}>
+      <View onLayout={this.onLayout.bind(this)} style={{ flex: 1 }}>
         <GridView
           itemDimension={dim}
           items={this.props.items}
@@ -50,21 +52,31 @@ export default class Dashboard extends Component {
                 style={[
                   styles.itemContainer,
                   {
-                    backgroundColor: this.props.background
-                      ? item.background
-                      : '#fff',
+                    backgroundColor:
+                      !item.background || !this.props.background
+                        ? '#fff'
+                        : item.background,
                     height: dim,
                   },
                 ]}>
                 <Icon
                   name={item.icon}
                   size={40}
-                  color={this.props.background ? '#fff' : '#3498db'}
+                  color={
+                    !item.background || !this.props.background
+                      ? '#3498db'
+                      : '#fff'
+                  }
                 />
                 <Text
                   style={[
                     styles.itemName,
-                    { color: this.props.background ? '#fff' : '#000' },
+                    {
+                      color:
+                        !item.background || !this.props.background
+                          ? '#000'
+                          : '#fff',
+                    },
                   ]}>
                   {item.name}
                 </Text>
