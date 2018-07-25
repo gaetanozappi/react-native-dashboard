@@ -47,5 +47,14 @@ const styles = StyleSheet.create({
 });
 ```
 
+## 💡 Props
+
+| Prop              | Type       | Default | Note                                                                                                       |
+| ----------------- | ---------- | ------- | ---------------------------------------------------------------------------------------------------------- |
+| `items`      | `array`   |  | We need to pass an array, as in the example.
+| `background`       | `bool`   | `false`   | It allows to choose whether to use the value of the background that is in the array.
+| `card`          | `function`   |    | Function that lets you know which card has been selected.
+| `column`     | `number`   | `2`  | Number of cards per line.
+
 ## License
 This library is provided under the Apache License.
