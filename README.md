@@ -1,9 +1,11 @@
 # React Native: Dashboard
 
+[![github home](http://img.shields.io/npm/v/react-native-dashboard.svg?style=flat)](https://www.npmjs.com/package/react-native-dashboard)
 [![github home](https://img.shields.io/badge/gaetanozappi-react--native--dashboard-blue.svg?style=flat-square)](https://github.com/gaetanozappi/react-native-dashboard)
 [![github issues](https://img.shields.io/github/issues/gaetanozappi/react-native-dashboard.svg?style=flat-square)](https://github.com/gaetanozappi/react-native-dashboard/issues)
 
 ![PNG](screenshot/react-native-dashboard.png)
+![PNG](screenshot/react-native-dashboard2.png)
 
 -   [Usage](#usage)
 -   [License](#license)
@@ -16,7 +18,7 @@ import { Text, View, StyleSheet } from 'react-native';
 import Dashboard from 'react-native-dashboard';
 
 const items = [
-  { name: 'Me', background: '#3498db', icon: 'user-dashboard' },
+  { name: 'Me', background: '#3498db', icon: 'user' },
   { name: 'Family', background: '#ef0202', icon: 'gratipay' },
   { name: 'Lovely', background: '#efcf02', icon: 'heart' },
   { name: 'Team', background: '#02ef1d', icon: 'users' },
