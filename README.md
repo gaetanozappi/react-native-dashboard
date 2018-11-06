@@ -13,10 +13,10 @@
 ![PNG](screenshot/react-native-dashboard.png)
 ![PNG](screenshot/react-native-dashboard2.png)
 
--   [Usage](#usage)
--   [License](#license)
+-   [Usage](#-usage)
+-   [License](#-license)
 
-## Usage
+## 💻 Usage
 
 ```javascript
 import React, { Component } from 'react';
@@ -62,5 +62,5 @@ const styles = StyleSheet.create({
 | `card`          | `function`   |    | Function that lets you know which card has been selected.
 | `column`     | `number`   | `2`  | Number of cards per line.
 
-## License
+## 📜 License
 This library is provided under the Apache License.
