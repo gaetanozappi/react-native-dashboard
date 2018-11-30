@@ -1,5 +1,6 @@
 # React Native: react-native-dashboard
 
+[![GitHub package version](https://img.shields.io/github/package-json/v/gaetanozappi/react-native-dashboard.svg?style=flat&colorB=2b7cff)](https://github.com/gaetanozappi/react-native-dashboard)
 [![github home](http://img.shields.io/npm/v/react-native-dashboard.svg?style=flat)](https://www.npmjs.com/package/react-native-dashboard)
 ![platforms](https://img.shields.io/badge/platforms-Android%20%7C%20iOS-brightgreen.svg?style=flat&colorB=191A17)
 [![github home](https://img.shields.io/badge/gaetanozappi-react--native--dashboard-blue.svg?style=flat-square)](https://github.com/gaetanozappi/react-native-dashboard)
