@@ -1,6 +1,6 @@
 {
   "name": "react-native-dashboard",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "React Native library to generate a dashboard.",
   "repository": {
     "type": "git",
@@ -15,7 +15,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "react-native-super-grid": "2.4.3"
+    "react-native-super-grid": "2.4.3",
+    "react-native-vector-icons": "6.3.0"
   },
   "keywords": [
     "react-native",
