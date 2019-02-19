@@ -6,7 +6,7 @@
 [![github home](https://img.shields.io/badge/gaetanozappi-react--native--dashboard-blue.svg?style=flat-square)](https://github.com/gaetanozappi/react-native-dashboard)
 [![npm](https://img.shields.io/npm/dm/react-native-dashboard.svg?style=flat&colorB=007ec6)](https://www.npmjs.com/package/react-native-dashboard)
 
-[![github issues](https://img.shields.io/github/issues/gaetanozappi/react-native-dashboard.svg?style=flat-square)](https://github.com/gaetanozappi/react-native-dashboard/issues)
+[![github issues](https://img.shields.io/github/issues/gaetanozappi/react-native-dashboard.svg?style=flat)](https://github.com/gaetanozappi/react-native-dashboard/issues)
 [![github closed issues](https://img.shields.io/github/issues-closed/gaetanozappi/react-native-dashboard.svg?style=flat&colorB=44cc11)](https://github.com/gaetanozappi/react-native-dashboard/issues?q=is%3Aissue+is%3Aclosed)
 [![Issue Stats](https://img.shields.io/issuestats/i/github/gaetanozappi/react-native-dashboard.svg?style=flat&colorB=44cc11)](http://github.com/gaetanozappi/react-native-dashboard/issues)
 [![github license](https://img.shields.io/github/license/gaetanozappi/react-native-dashboard.svg)]()
