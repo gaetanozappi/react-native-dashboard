@@ -7,7 +7,6 @@ import {
   Platform,
   TouchableNativeFeedback,
 } from 'react-native';
-import { Constants } from 'expo';
 import GridView from 'react-native-super-grid';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
