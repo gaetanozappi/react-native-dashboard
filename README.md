@@ -11,8 +11,8 @@
 [![Issue Stats](https://img.shields.io/issuestats/i/github/gaetanozappi/react-native-dashboard.svg?style=flat&colorB=44cc11)](http://github.com/gaetanozappi/react-native-dashboard/issues)
 [![github license](https://img.shields.io/github/license/gaetanozappi/react-native-dashboard.svg)]()
 
-![PNG](screenshot/react-native-dashboard.png)
-![PNG](screenshot/react-native-dashboard2.png)
+<img src="https://github.com/gaetanozappi/react-native-dashboard/raw/master/screenshot/react-native-dashboard.png" />       
+<img src="https://github.com/gaetanozappi/react-native-dashboard/raw/master/screenshot/react-native-dashboard2.png" />       
 
 -   [Usage](#-usage)
 -   [License](#-license)
@@ -62,6 +62,16 @@ const styles = StyleSheet.create({
 | `background`       | `bool`   | `false`   | It allows to choose whether to use the value of the background that is in the array.
 | `card`          | `function`   |    | Function that lets you know which card has been selected.
 | `column`     | `number`   | `2`  | Number of cards per line.
+
+- **items type `array`**
+
+## 💡 Props
+
+| Prop              | Type       | Default | Note                                                                                                       |
+| ----------------- | ---------- | ------- | ---------------------------------------------------------------------------------------------------------- |
+| `name`      | `string`   |  | Name card.
+| `background`       | `string`   | `#fff`   |Background card.
+| `icon`     | `string`   | `FontAwesome`  | Icon name.
 
 ## 📜 License
 This library is provided under the Apache License.
