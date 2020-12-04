@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import {
   Text,
   View,
@@ -7,7 +7,7 @@ import {
   Platform,
   TouchableNativeFeedback,
 } from 'react-native';
-import GridView from 'react-native-super-grid';
+import { FlatGrid } from 'react-native-super-grid';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const { width } = Dimensions.get('window');
@@ -15,77 +15,75 @@ const { width } = Dimensions.get('window');
 const RippleColor = (...args) =>
   Platform.Version >= 21 ? TouchableNativeFeedback.Ripple(...args) : null;
 
-export default class Dashboard extends Component {
-  constructor() {
-    super();
-    this.state = {
-      width: width,
-    };
-  }
+export default function Dashboard({
+  column = 2,
+  data = [],
+  card = () => {},
+  background,
+}) {
+  const [state, setState] = useState({
+    widthDevice: width,
+  });
 
-  onLayout(e) {
-    const { width } = Dimensions.get('window');
-    this.setState({ width });
-  }
+  const { widthDevice } = state;
 
-  render() {
-    console.log(!this.props.background);
-    var column = !this.props.column ? 2 : this.props.column;
-    var dim = this.state.width / column - 20;
-    return (
-      <View onLayout={this.onLayout.bind(this)} style={{ flex: 1 }}>
-        <GridView
-          itemDimension={dim}
-          items={this.props.items}
-          style={styles.gridView}
-          renderItem={item => (
-            <TouchableNativeFeedback
-              onPress={() => {
-                this.props.card(item);
-              }}
-              delayPressIn={0}
-              delayPressOut={0}
-              useForeground={true}
-              background={RippleColor('#fff')}>
-              <View
+  const onLayout = (e) => {
+    const { width: widthDevice } = Dimensions.get('window');
+    setState((prev) => ({ ...prev, widthDevice }));
+  };
+
+  var dim = widthDevice / column - 20;
+  return (
+    <View onLayout={onLayout} style={{ flex: 1 }}>
+      <FlatGrid
+        itemDimension={dim}
+        data={data}
+        style={styles.gridView}
+        renderItem={({ item }) => (
+          <TouchableNativeFeedback
+            onPress={() => {
+              card(item);
+            }}
+            delayPressIn={0}
+            delayPressOut={0}
+            useForeground={true}
+            background={RippleColor('#fff')}>
+            <View
+              style={[
+                styles.itemContainer,
+                {
+                  backgroundColor:
+                    !item.background || !background ? '#fff' : item.background,
+                  height: dim,
+                },
+              ]}>
+              <Icon
+                name={item.icon}
+                size={40}
+                color={
+                  item.iconColor ||
+                  (!item.background || !background ? '#3498db' : '#fff')
+                }
+                style={item.styleIcon}
+              />
+              <Text
                 style={[
-                  styles.itemContainer,
+                  styles.itemName,
                   {
-                    backgroundColor:
-                      !item.background || !this.props.background
-                        ? '#fff'
-                        : item.background,
-                    height: dim,
+                    color:
+                      item.nameColor ||
+                      (!item.background || !background ? '#000' : '#fff'),
                   },
+                  item.styleName,
                 ]}>
-                <Icon
-                  name={item.icon}
-                  size={40}
-                  color={
-                    !item.background || !this.props.background
-                      ? '#3498db'
-                      : '#fff'
-                  }
-                />
-                <Text
-                  style={[
-                    styles.itemName,
-                    {
-                      color:
-                        !item.background || !this.props.background
-                          ? '#000'
-                          : '#fff',
-                    },
-                  ]}>
-                  {item.name}
-                </Text>
-              </View>
-            </TouchableNativeFeedback>
-          )}
-        />
-      </View>
-    );
-  }
+                {item.name}
+              </Text>
+            </View>
+          </TouchableNativeFeedback>
+        )}
+      />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

@@ -24,26 +24,37 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import Dashboard from 'react-native-dashboard';
 
-const items = [
-  { name: 'Me', background: '#3498db', icon: 'user' },
-  { name: 'Family', background: '#ef0202', icon: 'gratipay' },
-  { name: 'Lovely', background: '#efcf02', icon: 'heart' },
-  { name: 'Team', background: '#02ef1d', icon: 'users' },
-  { name: 'Friends', background: '#02cbef', icon: 'group' },
-  { name: 'Calendars', background: '#ef5802', icon: 'calendar' },
+const data = [
+  { name: 'Me', background: '#3498db', icon: 'user', iconColor: '#0d47a1' },
+  {
+    name: 'Family',
+    background: '#b71c1c',
+    icon: 'gratipay',
+    styleIcon: { color: '#0d47a1' },
+  },
+  { name: 'Lovely', background: '#ffeb3b', icon: 'heart' },
+  {
+    name: 'Team',
+    background: '#4caf50',
+    icon: 'users',
+    styleName: { color: '#0d47a1', fontWeight: 'bold' },
+  },
+  {
+    name: 'Friends',
+    nameColor: '#0d47a1',
+    background: '#02cbef',
+    icon: 'group',
+  },
+  { name: 'Calendars', background: '#ff5722', icon: 'calendar' },
 ];
 
-export default class App extends Component {
-  _card = el => {
-    console.log('Card: ' + el.name)
-  };
-  render() {
-    return (
-      <View style={styles.container}>
-        <Dashboard items={items} background={true} card={this._card} column={2} />
-      </View>
-    );
-  }
+export default function App() {
+  const card = ({ name }) => console.log('Card: ' + name);
+  return (
+    <View style={styles.container}>
+      <Dashboard data={data} background={true} card={card} column={2} />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -58,7 +69,7 @@ const styles = StyleSheet.create({
 
 | Prop              | Type       | Default | Note                                                                                                       |
 | ----------------- | ---------- | ------- | ---------------------------------------------------------------------------------------------------------- |
-| `items`      | `array`   |  | We need to pass an array, as in the example.
+| `data`      | `array`   |  | We need to pass an array, as in the example.
 | `background`       | `bool`   | `false`   | It allows to choose whether to use the value of the background that is in the array.
 | `card`          | `function`   |    | Function that lets you know which card has been selected.
 | `column`     | `number`   | `2`  | Number of cards per line.
@@ -69,9 +80,13 @@ const styles = StyleSheet.create({
 
 | Prop              | Type       | Default | Note                                                                                                       |
 | ----------------- | ---------- | ------- | ---------------------------------------------------------------------------------------------------------- |
-| `name`      | `string`   |  | Name card.
 | `background`       | `string`   | `#fff`   |Background card.
-| `icon`     | `string`   | `FontAwesome`  | Icon name.
+| `name`      | `string`   |  | Name card.
+| `nameColor`       | `string`   | `#000`   |Name color.
+| `styleName`       | `obj`   | `{}`   |Name style.
+| `icon`     | `string(FontAwesome)`   |  | Icon name.
+| `iconColor`       | `string`   | `#3498db`   |Icon color.
+| `styleIcon`       | `obj`   | `{}`   |Icon style.
 
 ## 📜 License
 This library is provided under the Apache License.
